@@ -44,7 +44,7 @@ public class TextComposite implements TextComponent {
                 text.append("\n    ").append(component.toString());
             } else if (component.getTypeName().equals(TextComponentType.SENTENCE.name())) {
                 text.append(" ").append(component.toString());
-            } else if (component.getTypeName().equals(TextComponentType.LEXEME.name())) {
+            } else if (component.getTypeName().equals(TextComponentType.LEXEME.name()) || component.getTypeName().equals(TextComponentType.WORD.name())) {
                 text.append(" ").append(component.toString());
             } else if (component.getTypeName().equals(TextComponentType.SYMBOL.name())) {
                 text.append(component.toString());
