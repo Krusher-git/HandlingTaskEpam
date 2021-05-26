@@ -13,17 +13,12 @@ import java.util.List;
 
 public class Main {
     public static void main(String[] args) throws HandlingException {
-//        AbstractChainParser chainParser = new ParagraphParser();
-//        System.out.println(chainParser.hasNext());
-//        CustomFileReader customFileReader = new CustomFileReader();
-//        String ad = customFileReader.readFile("data/text.txt");
-//        TextComponent textComponent = chainParser.parse(ad);
-//        System.out.println(textComponent.toString());
-        List<Integer> ad = new ArrayList<>();
-        ad.add(1);
-        ad.add(32);
-        List<Integer> dsa = new ArrayList<>(ad);
-        dsa.remove(0);
-        System.out.println(ad.toString());
+        AbstractChainParser chainParser = new ParagraphParser();
+        System.out.println(chainParser.hasNext());
+        CustomFileReader customFileReader = new CustomFileReader();
+        String ad = customFileReader.readFile("data/text.txt");
+        TextComponent textComponent = chainParser.parse(ad);
+        System.out.println(textComponent.toString());
+
     }
 }
