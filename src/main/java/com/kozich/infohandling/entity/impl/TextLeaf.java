@@ -6,11 +6,13 @@ import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.List;
+
 public final class TextLeaf implements TextComponent {
 
     private static final Logger logger = LogManager.getLogger();
     private static final String LOG_INFO_MESSAGE = "The leaf has already been created";
-    private static final String LOG_ERROR_MESSAGE = "The leaf is not created";
+    private static final String LOG_ERROR_MESSAGE = "UnsupportedOperationException";
     private final Character symbol;
     private final TextComponentType type = TextComponentType.SYMBOL;
 
@@ -26,6 +28,17 @@ public final class TextLeaf implements TextComponent {
     }
 
 
+    @Override
+    public List<TextComponent> getList() {
+        logger.log(Level.ERROR, LOG_ERROR_MESSAGE);
+        throw new UnsupportedOperationException();
+    }
+
+    @Override
+    public int getSize() {
+        logger.log(Level.ERROR, LOG_ERROR_MESSAGE);
+        throw new UnsupportedOperationException();
+    }
 
     @Override
     public void add(TextComponent textComponent) {

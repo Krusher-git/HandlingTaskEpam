@@ -22,6 +22,17 @@ public class TextComposite implements TextComponent {
     }
 
     @Override
+    public List<TextComponent> getList() {
+        List<TextComponent> copy = new ArrayList<>(textComponents);
+        return copy;
+    }
+
+    @Override
+    public int getSize() {
+        return textComponents.size();
+    }
+
+    @Override
     public String getTypeName() {
         return type.name();
     }
@@ -41,7 +52,7 @@ public class TextComposite implements TextComponent {
         StringBuilder text = new StringBuilder();
         for (TextComponent component : textComponents) {
             if (component.getTypeName().equals(TextComponentType.PARAGRAPH.name())) {
-                text.append("\n    ").append(component.toString());
+                text.append("   ").append(component.toString()).append("\n");
             } else if (component.getTypeName().equals(TextComponentType.SENTENCE.name())) {
                 text.append(" ").append(component.toString());
             } else if (component.getTypeName().equals(TextComponentType.LEXEME.name()) || component.getTypeName().equals(TextComponentType.WORD.name())) {

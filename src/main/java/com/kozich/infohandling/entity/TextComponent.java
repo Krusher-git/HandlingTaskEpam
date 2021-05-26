@@ -1,5 +1,7 @@
 package com.kozich.infohandling.entity;
 
+import java.util.List;
+
 public interface TextComponent {
 
     void add(TextComponent textComponent);
@@ -7,5 +9,9 @@ public interface TextComponent {
     void remove(TextComponent textComponent);
 
     String getTypeName();
+
+    List<TextComponent> getList();
+
+    int getSize();
 
 }
